@@ -1,0 +1,39 @@
+POST http://localhost:3000/register
+Content-Type: application/json
+
+{
+  "username": "new_user",
+  "name": "New User",
+  "password": "new_password",
+  "gender": "Non-binary",
+  "location": "San Francisco"
+}
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+  "username": "new_user",
+  "password": "passed_password"
+}
+PUT http://localhost:3000/change-password
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5ld191c2VyIiwiaWF0IjoxNzI1NTM5MDczLCJleHAiOjE3MjU1NDI2NzN9.z6zFNjIX7WpBF3pfnYlJeLrqF-yjLOz2p7l5PZqJRRI
+
+{
+  "username": "new_user",
+  "oldPassword": "pass_password",
+  "newPassword": "passed_password"
+}
+POST http://localhost:3000/enqueue
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5ld191c2VyIiwiaWF0IjoxNzI1NTM5MDczLCJleHAiOjE3MjU1NDI2NzN9.z6zFNjIX7WpBF3pfnYlJeLrqF-yjLOz2p7l5PZqJRRI
+
+{
+  "requestData": {
+    "action": "post",
+    "content": "This is a test post"
+  }
+}
+GET http://localhost:3000/process-queue
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5ld191c2VyIiwiaWF0IjoxNzI1NTQwOTA5LCJleHAiOjE3MjU1NDQ1MDl9._xy70dKV6vothUaiKZHvk72tjGMBKTToTVEPqn5ZTqo
+
